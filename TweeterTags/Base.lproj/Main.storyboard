@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -142,6 +143,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="tweetImage" destination="6R6-7C-bBT" id="evo-mx-7bp"/>
+                                    <segue destination="K1s-wL-VPm" kind="show" identifier="imageVCSegue" id="gzM-xo-DyW"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mentionsContent" id="tXU-Dj-KJ5" customClass="MentionsTVCell" customModule="TweeterTags" customModuleProvider="target">
@@ -167,7 +169,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mentionText" destination="YWP-02-ClK" id="cNs-4i-mWk"/>
-                                    <segue destination="iOl-S5-d1T" kind="show" identifier="tweetsSegue" id="zPc-CY-TdC"/>
+                                    <segue destination="iOl-S5-d1T" kind="show" identifier="tweetsTVCSegue" id="zPc-CY-TdC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -181,6 +183,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tna-gr-Qtf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2327.536231884058" y="611.38392857142856"/>
+        </scene>
+        <!--ImageVC-->
+        <scene sceneID="JnL-CE-zIl">
+            <objects>
+                <viewController id="K1s-wL-VPm" customClass="ImageVC" customModule="TweeterTags" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jXO-3I-kJq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u57-Xz-5KR">
+                                <rect key="frame" x="0.0" y="22" width="414" height="842"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mbG-Tp-fZx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u57-Xz-5KR" firstAttribute="centerY" secondItem="mbG-Tp-fZx" secondAttribute="centerY" id="4Sh-mE-tMF"/>
+                            <constraint firstItem="u57-Xz-5KR" firstAttribute="height" secondItem="jXO-3I-kJq" secondAttribute="height" id="9HK-LE-cGK"/>
+                            <constraint firstItem="u57-Xz-5KR" firstAttribute="centerX" secondItem="mbG-Tp-fZx" secondAttribute="centerX" id="CmW-hp-fkr"/>
+                            <constraint firstItem="u57-Xz-5KR" firstAttribute="width" secondItem="jXO-3I-kJq" secondAttribute="width" id="GhL-wa-pPP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lmo-mh-Pdi"/>
+                    <connections>
+                        <outlet property="tweetImage" destination="u57-Xz-5KR" id="a3a-ef-Ufv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2iP-jk-ihc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2328" y="-67"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -17,6 +17,15 @@ struct Section {
     }
 }
 
+enum StoryboardIdentifiers: String {
+    case tweetsTVCSegue = "tweetsTVCSegue"
+    case imageVCSegue = "imageVCSegue"
+    
+    init?(_ segue: UIStoryboardSegue) {
+        self.init(rawValue: segue.identifier!)
+    }
+}
+
 class MentionsTVC: UITableViewController {
     var sections: [Section] = []
     var tweet: TwitterTweet? {
@@ -115,8 +124,10 @@ class MentionsTVC: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "tweetsSegue") {
-            if let tweetsTVC = segue.destination as? TweetsTVC {
+        let destinationVC = segue.destination
+        switch StoryboardIdentifiers(segue)! {
+        case .tweetsTVCSegue:
+            if let tweetsTVC = destinationVC as? TweetsTVC {
                 let indexPath = tableView.indexPathForSelectedRow!
                 if let cell = tableView.cellForRow(at: indexPath) as? MentionsTVCell {
                     if let cellText = cell.mentionText.text {
@@ -124,11 +135,18 @@ class MentionsTVC: UITableViewController {
                     }
                 }
             }
+        case .imageVCSegue:
+            if let imageVC = destinationVC as? ImageVC {
+                let indexPath = tableView.indexPathForSelectedRow!
+                if let cell = tableView.cellForRow(at: indexPath) as? ImageTVCell {
+                    imageVC.tweetImage = cell.tweetImage
+                }
+            }
         }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "tweetsSegue" {
+        if identifier == "tweetsTVCSegue" {
             let indexPath = tableView.indexPathForSelectedRow!
             let sectionIndex = indexPath.section
             if sections[sectionIndex].name == "Urls" {
@@ -138,7 +156,10 @@ class MentionsTVC: UITableViewController {
                 return false
             }
             return true
+        } else if identifier == "imageVCSegue" {
+            return true
         }
+        
         return false
     }
     
