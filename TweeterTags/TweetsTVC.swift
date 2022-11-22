@@ -11,7 +11,6 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
 
     var tweets = [[TwitterTweet]]()
     { didSet {
-        print(tweets)
         tableView.reloadData()
     }}
     
