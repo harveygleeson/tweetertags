@@ -23,7 +23,6 @@ class MentionsTVC: UITableViewController {
         didSet
         {
             self.title = tweet?.user.name
-//            print("Set tweet to \(tweet?.description ?? "nothing")")
             print("Set tweet media to \(tweet?.media.description ?? "nothing")")
             
         }
@@ -118,16 +117,29 @@ class MentionsTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "tweetsSegue") {
             if let tweetsTVC = segue.destination as? TweetsTVC {
-                if let indexPath = self.tableView.indexPathForSelectedRow {
-                    if let cell = self.tableView.cellForRow(at: indexPath) as? MentionsTVCell {
-                    print("mentiontext: \(cell.mentionText.text ?? "nothing")")
-                    if let text = cell.mentionText.text {
-                        tweetsTVC.twitterQueryText = text
-                        }
+                let indexPath = tableView.indexPathForSelectedRow!
+                if let cell = tableView.cellForRow(at: indexPath) as? MentionsTVCell {
+                    if let cellText = cell.mentionText.text {
+                            tweetsTVC.twitterQueryText = cellText
                     }
                 }
             }
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "tweetsSegue" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let sectionIndex = indexPath.section
+            if sections[sectionIndex].name == "Urls" {
+                let cell = tableView.cellForRow(at: indexPath) as! MentionsTVCell
+                let cellText = cell.mentionText.text!
+                UIApplication.shared.open(URL(string: cellText)!)
+                return false
+            }
+            return true
+        }
+        return false
     }
     
     /*
