@@ -8,5 +8,5 @@
 
 // TODO: Copy the keys from the "Keys and Access Tokens" tab of your app page.
 // TODO: To create a new Twitter app, visit Twitter apps dashboard https://apps.twitter.com/
-TWITTER_CONSUMER_KEY = EDIT_THIS
-TWITTER_CONSUMER_SECRET = EDIT_THIS
+TWITTER_CONSUMER_KEY = 55kluNqOQmWY3bdDCr68I15rm
+TWITTER_CONSUMER_SECRET = ViuBzswg1LVnnGvubzIbiQshEN8AVTmR1L1q1fcO8c494Wfed9

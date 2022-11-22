@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E55206E427A460FF0003FF9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55206E327A460FF0003FF9E /* ViewController.swift */; };
+		B90A4367292CDBB200FAE32E /* UrlTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A4366292CDBB200FAE32E /* UrlTVCell.swift */; };
+		B9B64364292BA424009F2383 /* MentionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B64363292BA424009F2383 /* MentionsTVC.swift */; };
+		B9B6436C292C02E0009F2383 /* ImageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6436B292C02E0009F2383 /* ImageTVCell.swift */; };
+		B9B6436E292C2E82009F2383 /* MentionsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6436D292C2E82009F2383 /* MentionsTVCell.swift */; };
+		B9DA75D8292A76CC003D9DF1 /* TweetTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DA75D7292A76CC003D9DF1 /* TweetTVCell.swift */; };
+		B9F2E65D2924E52000EA8684 /* TweetsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F2E65C2924E52000EA8684 /* TweetsTVC.swift */; };
 		E5CE0C5F27A4558A00894355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CE0C5E27A4558A00894355 /* AppDelegate.swift */; };
 		E5CE0C6627A4558A00894355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5CE0C6427A4558A00894355 /* Main.storyboard */; };
 		E5CE0C6827A4558B00894355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5CE0C6727A4558B00894355 /* Assets.xcassets */; };
@@ -22,7 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E55206E327A460FF0003FF9E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B90A4366292CDBB200FAE32E /* UrlTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlTVCell.swift; sourceTree = "<group>"; };
+		B9B64363292BA424009F2383 /* MentionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsTVC.swift; sourceTree = "<group>"; };
+		B9B6436B292C02E0009F2383 /* ImageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTVCell.swift; sourceTree = "<group>"; };
+		B9B6436D292C2E82009F2383 /* MentionsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsTVCell.swift; sourceTree = "<group>"; };
+		B9DA75D7292A76CC003D9DF1 /* TweetTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTVCell.swift; sourceTree = "<group>"; };
+		B9F2E65C2924E52000EA8684 /* TweetsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsTVC.swift; sourceTree = "<group>"; };
 		E5CE0C5B27A4558A00894355 /* TweeterTags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweeterTags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CE0C5E27A4558A00894355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5CE0C6527A4558A00894355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +83,12 @@
 			children = (
 				E5CE0C5E27A4558A00894355 /* AppDelegate.swift */,
 				E5CE0CA327A456E900894355 /* SceneDelegate.swift */,
-				E55206E327A460FF0003FF9E /* ViewController.swift */,
+				B9B64363292BA424009F2383 /* MentionsTVC.swift */,
+				B9F2E65C2924E52000EA8684 /* TweetsTVC.swift */,
+				B9B6436B292C02E0009F2383 /* ImageTVCell.swift */,
+				B9B6436D292C2E82009F2383 /* MentionsTVCell.swift */,
+				B9DA75D7292A76CC003D9DF1 /* TweetTVCell.swift */,
+				B90A4366292CDBB200FAE32E /* UrlTVCell.swift */,
 				E5CE0C6427A4558A00894355 /* Main.storyboard */,
 				E5CE0C6727A4558B00894355 /* Assets.xcassets */,
 				E5CE0C6927A4558B00894355 /* LaunchScreen.storyboard */,
@@ -169,9 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F2E65D2924E52000EA8684 /* TweetsTVC.swift in Sources */,
 				E5CE0C5F27A4558A00894355 /* AppDelegate.swift in Sources */,
 				E5CE0C8127A455E200894355 /* TwitterAPI.swift in Sources */,
-				E55206E427A460FF0003FF9E /* ViewController.swift in Sources */,
+				B9DA75D8292A76CC003D9DF1 /* TweetTVCell.swift in Sources */,
+				B9B6436E292C2E82009F2383 /* MentionsTVCell.swift in Sources */,
+				B90A4367292CDBB200FAE32E /* UrlTVCell.swift in Sources */,
+				B9B6436C292C02E0009F2383 /* ImageTVCell.swift in Sources */,
+				B9B64364292BA424009F2383 /* MentionsTVC.swift in Sources */,
 				E5CE0CA427A456E900894355 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +343,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = APF3CQN736;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Twitter-Kit",
@@ -356,6 +378,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = APF3CQN736;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Twitter-Kit",
