@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B90A4367292CDBB200FAE32E /* UrlTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A4366292CDBB200FAE32E /* UrlTVCell.swift */; };
 		B9B64364292BA424009F2383 /* MentionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B64363292BA424009F2383 /* MentionsTVC.swift */; };
 		B9B6436C292C02E0009F2383 /* ImageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6436B292C02E0009F2383 /* ImageTVCell.swift */; };
 		B9B6436E292C2E82009F2383 /* MentionsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6436D292C2E82009F2383 /* MentionsTVCell.swift */; };
@@ -27,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B90A4366292CDBB200FAE32E /* UrlTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlTVCell.swift; sourceTree = "<group>"; };
 		B9B64363292BA424009F2383 /* MentionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsTVC.swift; sourceTree = "<group>"; };
 		B9B6436B292C02E0009F2383 /* ImageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTVCell.swift; sourceTree = "<group>"; };
 		B9B6436D292C2E82009F2383 /* MentionsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsTVCell.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				B9B6436B292C02E0009F2383 /* ImageTVCell.swift */,
 				B9B6436D292C2E82009F2383 /* MentionsTVCell.swift */,
 				B9DA75D7292A76CC003D9DF1 /* TweetTVCell.swift */,
-				B90A4366292CDBB200FAE32E /* UrlTVCell.swift */,
 				E5CE0C6427A4558A00894355 /* Main.storyboard */,
 				E5CE0C6727A4558B00894355 /* Assets.xcassets */,
 				E5CE0C6927A4558B00894355 /* LaunchScreen.storyboard */,
@@ -189,7 +186,6 @@
 				E5CE0C8127A455E200894355 /* TwitterAPI.swift in Sources */,
 				B9DA75D8292A76CC003D9DF1 /* TweetTVCell.swift in Sources */,
 				B9B6436E292C2E82009F2383 /* MentionsTVCell.swift in Sources */,
-				B90A4367292CDBB200FAE32E /* UrlTVCell.swift in Sources */,
 				B9B6436C292C02E0009F2383 /* ImageTVCell.swift in Sources */,
 				B9B64364292BA424009F2383 /* MentionsTVC.swift in Sources */,
 				E5CE0CA427A456E900894355 /* SceneDelegate.swift in Sources */,
