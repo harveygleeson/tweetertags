@@ -154,6 +154,9 @@ class MentionsTVC: UITableViewController {
                 let cellText = cell.mentionText.text!
                 UIApplication.shared.open(URL(string: cellText)!)
                 return false
+            } else {
+                // In the case of mention or hashtag
+                return true
             }
         } else if identifier == "imageVCSegue" {
             return true
