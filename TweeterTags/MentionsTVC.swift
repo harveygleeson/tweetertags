@@ -139,7 +139,7 @@ class MentionsTVC: UITableViewController {
             if let imageVC = destinationVC as? ImageVC {
                 let indexPath = tableView.indexPathForSelectedRow!
                 if let cell = tableView.cellForRow(at: indexPath) as? ImageTVCell {
-                    imageVC.tweetImage = cell.tweetImage
+                    imageVC.imageToDisplay = cell.tweetImage.image
                 }
             }
         }
@@ -155,7 +155,6 @@ class MentionsTVC: UITableViewController {
                 UIApplication.shared.open(URL(string: cellText)!)
                 return false
             }
-            return true
         } else if identifier == "imageVCSegue" {
             return true
         }

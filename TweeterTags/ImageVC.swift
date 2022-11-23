@@ -11,16 +11,20 @@ class ImageVC: UIViewController {
 
 
     @IBOutlet weak var tweetImage: UIImageView! 
+    var imageToDisplay:UIImage? = nil
     
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let newImage = imageToDisplay {
+            tweetImage.image = newImage
+//            tweetImage.isUserInteractionEnabled = true
+//
+//            let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector())
+        }
     }
     
+//    private func pinchGesture(sender: UIPinchGestureRecognizer)
 
     /*
     // MARK: - Navigation
