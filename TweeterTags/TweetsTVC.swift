@@ -9,6 +9,7 @@ import UIKit
 
 class TweetsTVC: UITableViewController, UITextFieldDelegate {
 
+    
     var tweets = [[TwitterTweet]]()
     { didSet {
         tableView.reloadData()
@@ -16,6 +17,25 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     
     var twitterQueryText: String? = "#ucd"
     { didSet {
+        let defaults = UserDefaults.standard
+        
+        // Check if an array already exists
+        if var existingDefaults = defaults.object(forKey: "tweeterTags.searchHistory") as? [String] {
+            // If it does and length is greater than 100, remove last and update
+            if existingDefaults.count > 100 {
+                existingDefaults.removeLast()
+                existingDefaults.insert(twitterQueryText!, at: 0)
+            } else {
+                // Length is not 100 yet, just insert
+                existingDefaults.insert(twitterQueryText!, at: 0)
+            }
+        } else {
+            // If array does not exist, create one and put query in
+            var searchHistory: [String] = [String]()
+            searchHistory.append(twitterQueryText!)
+            defaults.set(searchHistory, forKey: "tweeterTags.searchHistory")
+        }
+        
         tweets.removeAll()
         twitterQueryTextField.text = self.twitterQueryText
         refresh()

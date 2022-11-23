@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B912492D292ED50900330114 /* RecentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912492C292ED50900330114 /* RecentsTVC.swift */; };
 		B975623C292D4B1F005AD4D6 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975623B292D4B1F005AD4D6 /* ImageVC.swift */; };
 		B9B64364292BA424009F2383 /* MentionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B64363292BA424009F2383 /* MentionsTVC.swift */; };
 		B9B6436C292C02E0009F2383 /* ImageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6436B292C02E0009F2383 /* ImageTVCell.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B912492C292ED50900330114 /* RecentsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsTVC.swift; sourceTree = "<group>"; };
 		B975623B292D4B1F005AD4D6 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		B9B64363292BA424009F2383 /* MentionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsTVC.swift; sourceTree = "<group>"; };
 		B9B6436B292C02E0009F2383 /* ImageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTVCell.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				E5CE0C5E27A4558A00894355 /* AppDelegate.swift */,
 				E5CE0CA327A456E900894355 /* SceneDelegate.swift */,
 				B975623B292D4B1F005AD4D6 /* ImageVC.swift */,
+				B912492C292ED50900330114 /* RecentsTVC.swift */,
 				B9B64363292BA424009F2383 /* MentionsTVC.swift */,
 				B9F2E65C2924E52000EA8684 /* TweetsTVC.swift */,
 				B9B6436B292C02E0009F2383 /* ImageTVCell.swift */,
@@ -188,6 +191,7 @@
 				E5CE0C5F27A4558A00894355 /* AppDelegate.swift in Sources */,
 				E5CE0C8127A455E200894355 /* TwitterAPI.swift in Sources */,
 				B9DA75D8292A76CC003D9DF1 /* TweetTVCell.swift in Sources */,
+				B912492D292ED50900330114 /* RecentsTVC.swift in Sources */,
 				B9B6436E292C2E82009F2383 /* MentionsTVCell.swift in Sources */,
 				B9B6436C292C02E0009F2383 /* ImageTVCell.swift in Sources */,
 				B9B64364292BA424009F2383 /* MentionsTVC.swift in Sources */,
