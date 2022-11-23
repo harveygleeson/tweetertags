@@ -40,15 +40,15 @@
                             <textInputTraits key="textInputTraits" keyboardType="twitter"/>
                         </textField>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="128" id="7Bl-0S-rPA" customClass="TweetTVCell" customModule="TweeterTags" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="128" id="7Bl-0S-rPA" customClass="TweetTVCell" customModule="TweeterTags" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="78.5" width="414" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Bl-0S-rPA" id="vFE-WV-2RV">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUa-oS-5fq">
-                                            <rect key="frame" x="100" y="5" width="304" height="33"/>
+                                            <rect key="frame" x="100" y="5" width="275.5" height="33"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJV-ao-Rvc">
-                                            <rect key="frame" x="100" y="43" width="284" height="69"/>
+                                            <rect key="frame" x="100" y="43" width="267.5" height="69"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6R6-7C-bBT">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6R6-7C-bBT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
                                         </imageView>
                                     </subviews>
@@ -146,11 +146,11 @@
                                     <segue destination="K1s-wL-VPm" kind="show" identifier="imageVCSegue" id="gzM-xo-DyW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mentionsContent" id="tXU-Dj-KJ5" customClass="MentionsTVCell" customModule="TweeterTags" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mentionsContent" id="tXU-Dj-KJ5" customClass="MentionsTVCell" customModule="TweeterTags" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="298.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tXU-Dj-KJ5" id="8We-fi-uRR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="textContent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWP-02-ClK">
@@ -192,27 +192,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u57-Xz-5KR">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="b1H-2e-Lyk">
                                 <rect key="frame" x="0.0" y="44" width="414" height="798"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBm-5p-Wcb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pBm-5p-Wcb" secondAttribute="bottom" id="9we-U0-Wt5"/>
+                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="top" secondItem="b1H-2e-Lyk" secondAttribute="top" id="E64-Gb-C0d"/>
+                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="centerY" secondItem="b1H-2e-Lyk" secondAttribute="centerY" id="F5S-Jx-DGf"/>
+                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="centerX" secondItem="b1H-2e-Lyk" secondAttribute="centerX" id="gr5-55-DNc"/>
+                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="leading" secondItem="b1H-2e-Lyk" secondAttribute="leading" id="lEy-Dz-fYX"/>
+                                    <constraint firstAttribute="trailing" secondItem="pBm-5p-Wcb" secondAttribute="trailing" id="wEl-7H-0W4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6Ze-UA-ytv"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="17H-Mm-O4d"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mbG-Tp-fZx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="u57-Xz-5KR" firstAttribute="centerY" secondItem="mbG-Tp-fZx" secondAttribute="centerY" id="4Sh-mE-tMF"/>
-                            <constraint firstItem="u57-Xz-5KR" firstAttribute="height" secondItem="mbG-Tp-fZx" secondAttribute="height" id="9HK-LE-cGK"/>
-                            <constraint firstItem="u57-Xz-5KR" firstAttribute="centerX" secondItem="mbG-Tp-fZx" secondAttribute="centerX" id="CmW-hp-fkr"/>
-                            <constraint firstItem="u57-Xz-5KR" firstAttribute="width" secondItem="mbG-Tp-fZx" secondAttribute="width" id="GhL-wa-pPP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="b1H-2e-Lyk" secondAttribute="bottom" id="TGK-7H-OU5"/>
+                            <constraint firstItem="b1H-2e-Lyk" firstAttribute="leading" secondItem="mbG-Tp-fZx" secondAttribute="leading" id="dEY-bb-4cj"/>
+                            <constraint firstItem="b1H-2e-Lyk" firstAttribute="top" secondItem="mbG-Tp-fZx" secondAttribute="top" id="vUt-ho-wVG"/>
+                            <constraint firstItem="b1H-2e-Lyk" firstAttribute="centerX" secondItem="jXO-3I-kJq" secondAttribute="centerX" id="x7Q-hb-McG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lmo-mh-Pdi"/>
                     <connections>
-                        <outlet property="tweetImage" destination="u57-Xz-5KR" id="a3a-ef-Ufv"/>
+                        <outlet property="scrollView" destination="b1H-2e-Lyk" id="zQd-a6-9Pq"/>
+                        <outlet property="tweetImage" destination="pBm-5p-Wcb" id="r5g-W1-8Q8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iP-jk-ihc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2328" y="-67"/>
+            <point key="canvasLocation" x="-2328.985507246377" y="-67.633928571428569"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
