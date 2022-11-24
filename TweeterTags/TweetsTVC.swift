@@ -13,7 +13,7 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     var tweets = [[TwitterTweet]]()
     { didSet {
         tableView.reloadData()
-    }}
+    } }
     
     var twitterQueryText: String? = "#ucd"
     { didSet {
@@ -26,17 +26,19 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
                 existingDefaults.removeLast()
                 existingDefaults.insert(twitterQueryText!, at: 0)
             } else {
+                print("existingDefaults is \(existingDefaults)")
                 // Length is not 100 yet, just insert
                 existingDefaults.insert(twitterQueryText!, at: 0)
+                defaults.set(existingDefaults, forKey: "tweeterTags.searchHistory")
             }
         } else {
             // If array does not exist, create one and put query in
-            var searchHistory: [String] = [String]()
+            var searchHistory = [String]()
             searchHistory.append(twitterQueryText!)
             defaults.set(searchHistory, forKey: "tweeterTags.searchHistory")
         }
         
-        tweets.removeAll()
+        self.tweets.removeAll()
         twitterQueryTextField.text = self.twitterQueryText
         refresh()
     } }
@@ -49,7 +51,6 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
             twitterRequest.fetchTweets { (tweets) -> Void in
                 DispatchQueue.main.async { () -> Void in
                     self.tweets.append(tweets)
-                    self.tableView.reloadData()
                 }
             }
          }
@@ -63,10 +64,10 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.twitterQueryTextField.delegate = self
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        refresh()
+        twitterQueryTextField.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        // refresh()
     }
 
     // MARK: - Table view data source

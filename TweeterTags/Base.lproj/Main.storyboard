@@ -213,15 +213,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchHistory" id="ROl-ub-mXK">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="53.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchHistory" id="ROl-ub-mXK">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="32.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ROl-ub-mXK" id="Ngf-qb-OUl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="32.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAM-jV-fw5">
-                                            <rect key="frame" x="25" y="16" width="42" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAM-jV-fw5">
+                                            <rect key="frame" x="25" y="16" width="0.0" height="0.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -234,6 +234,9 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bAM-jV-fw5" secondAttribute="trailing" constant="20" symbolic="YES" id="yln-Ew-Pzb"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iOl-S5-d1T" kind="show" identifier="historySegue" id="Mz9-p3-fEp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -312,7 +315,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GyD-8y-YJ1"/>
+        <segue reference="Mz9-p3-fEp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>

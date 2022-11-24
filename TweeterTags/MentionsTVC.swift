@@ -40,8 +40,8 @@ class MentionsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         if let tweet = tweet {
             if tweet.media.count != 0 {
                 sections.append(Section(name: "Images", count: tweet.media.count))
@@ -63,16 +63,6 @@ class MentionsTVC: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-    
-//    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let sectionIndex = indexPath.section
-//        if sections[sectionIndex].name == "Urls" {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "mentionsContent", for: indexPath) as! MentionsTVCell
-//            if let text = cell.mentionText.text {
-//                UIApplication.shared.open(URL(string: text)!)
-//            }
-//        }
-//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].count
@@ -164,40 +154,4 @@ class MentionsTVC: UITableViewController {
         
         return false
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }
