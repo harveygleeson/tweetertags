@@ -37,19 +37,16 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
             searchHistory.append(twitterQueryText!)
             defaults.set(searchHistory, forKey: "tweeterTags.searchHistory")
         }
-        print("1. \(self.tweets.description)")
         tweets.removeAll()
-        print("2. \(self.tweets.description)")
         twitterQueryTextField.text = twitterQueryText
         refresh()
-        print("3. \(self.tweets.description)")
     } }
     
     @IBOutlet weak var twitterQueryTextField: UITextField!
     
     private func refresh() {
         if let twitterQueryText = twitterQueryText {
-            let twitterRequest = TwitterRequest(search: twitterQueryText, count: 5)
+            let twitterRequest = TwitterRequest(search: twitterQueryText, count: 8)
             twitterRequest.fetchTweets { (tweets) -> Void in
                 DispatchQueue.main.async { () -> Void in
                     self.tweets.append(tweets)
@@ -107,7 +104,7 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
             }
         // Never reached due to shouldPerformSegue conditions
         default:
-            return
+            break
         }
     }
     
