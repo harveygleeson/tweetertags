@@ -42,7 +42,8 @@ class RecentsTVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination
-        if segue.identifier == "historySegue" {
+        switch StoryboardIdentifiers(segue)! {
+        case .historySegue:
             if let tweetsTVC = destinationVC as? TweetsTVC {
                 let indexPath = tableView.indexPathForSelectedRow!
                 if let cell = tableView.cellForRow(at: indexPath) {
@@ -51,6 +52,18 @@ class RecentsTVC: UITableViewController {
                     }
                 }
             }
+        // Never reached due to shouldPerformSegue conditions
+        default:
+            return
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch StoryboardIdentifiers(rawValue: identifier)! {
+        case .historySegue:
+            return true
+        default:
+            return false
         }
     }
     

@@ -96,7 +96,7 @@
                                     <outlet property="tweetTime" destination="0zo-Tv-aHI" id="tIu-R8-TZ6"/>
                                     <outlet property="userImage" destination="dTe-cg-55y" id="kX7-eU-NMT"/>
                                     <outlet property="username" destination="dUa-oS-5fq" id="aHb-7A-t2T"/>
-                                    <segue destination="piI-O3-eIp" kind="show" identifier="mentionsSegue" id="i8I-IH-BGF"/>
+                                    <segue destination="piI-O3-eIp" kind="show" identifier="mentionsTVCSegue" id="i8I-IH-BGF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

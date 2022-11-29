@@ -20,6 +20,8 @@ struct Section {
 enum StoryboardIdentifiers: String {
     case tweetsTVCSegue = "tweetsTVCSegue"
     case imageVCSegue = "imageVCSegue"
+    case mentionsTVCSegue = "mentionsTVCSegue"
+    case historySegue = "historySegue"
     
     init?(_ segue: UIStoryboardSegue) {
         self.init(rawValue: segue.identifier!)
@@ -102,6 +104,7 @@ class MentionsTVC: UITableViewController {
             }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "mentionsContent", for: indexPath)
+        cell.textLabel?.text = "No Data Available"
         return cell
     }
     
@@ -132,11 +135,15 @@ class MentionsTVC: UITableViewController {
                     imageVC.imageToDisplay = cell.tweetImage.image
                 }
             }
+        // Never reached due to shouldPerformSegue conditions
+        default:
+            return
         }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "tweetsTVCSegue" {
+        switch StoryboardIdentifiers(rawValue: identifier)! {
+        case .tweetsTVCSegue:
             let indexPath = tableView.indexPathForSelectedRow!
             let sectionIndex = indexPath.section
             if sections[sectionIndex].name == "Urls" {
@@ -148,10 +155,12 @@ class MentionsTVC: UITableViewController {
                 // In the case of mention or hashtag
                 return true
             }
-        } else if identifier == "imageVCSegue" {
+        case .imageVCSegue:
             return true
+        case .mentionsTVCSegue:
+            return false
+        case .historySegue:
+            return false
         }
-        
-        return false
     }
 }

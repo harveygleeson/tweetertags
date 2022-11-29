@@ -37,10 +37,12 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
             searchHistory.append(twitterQueryText!)
             defaults.set(searchHistory, forKey: "tweeterTags.searchHistory")
         }
-        
-        self.tweets.removeAll()
-        twitterQueryTextField.text = self.twitterQueryText
+        print("1. \(self.tweets.description)")
+        tweets.removeAll()
+        print("2. \(self.tweets.description)")
+        twitterQueryTextField.text = twitterQueryText
         refresh()
+        print("3. \(self.tweets.description)")
     } }
     
     @IBOutlet weak var twitterQueryTextField: UITextField!
@@ -67,8 +69,13 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
         twitterQueryTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        // refresh()
+//        let defaults = UserDefaults.standard
+//        if let existingDefaults = defaults.object(forKey: "tweeterTags.searchHistory") as? [String] {
+//            let mostRecentSearch = existingDefaults.first
+//            twitterQueryText = mostRecentSearch
+//        }
     }
+    
 
     // MARK: - Table view data source
 
@@ -90,12 +97,26 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "mentionsSegue") {
-            if let mentionsTVC = segue.destination as? MentionsTVC {
+        let destinationVC = segue.destination
+        switch StoryboardIdentifiers(segue)! {
+        case .mentionsTVCSegue:
+            if let mentionsTVC = destinationVC as? MentionsTVC {
                 if let index = self.tableView.indexPathForSelectedRow {
                     mentionsTVC.tweet = tweets[index.section][index.row]
                 }
             }
+        // Never reached due to shouldPerformSegue conditions
+        default:
+            return
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch StoryboardIdentifiers(rawValue: identifier)! {
+        case .mentionsTVCSegue:
+            return true
+        default:
+            return false
         }
     }
 }

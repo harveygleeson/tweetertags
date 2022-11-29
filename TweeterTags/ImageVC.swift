@@ -17,16 +17,24 @@ class ImageVC: UIViewController, UIScrollViewDelegate {
     
     // Function to set display image and zoom
     func setImageAndZoom(imageToDisplay: UIImage) {
-
         tweetImage.image = imageToDisplay
-        scrollView.contentSize = imageToDisplay.size
+        scrollView.addSubview(tweetImage)
+        scrollView.sizeToFit()
+        scrollView.contentSize = tweetImage.frame.size
+        
+        // Get image height
+        let imageHeight = imageToDisplay.size.height
+        let scrollViewHeight = scrollView.contentSize.height
+        var zoomScale:CGFloat = 1
+
+        if scrollViewHeight < imageHeight {
+            zoomScale = imageHeight / scrollViewHeight
+        } else {
+            zoomScale = scrollViewHeight / imageHeight
+        }
         scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 5
-        scrollView.addSubview(tweetImage)
-        scrollView.setZoomScale(2, animated: false)
-
-        scrollView.contentOffset.x = (scrollView.contentSize.width / 2) - (scrollView.frame.width / 2)
-        scrollView.contentOffset.y = (scrollView.contentSize.height / 2) - (scrollView.frame.height / 2)
+        scrollView.setZoomScale(zoomScale, animated: false)
     }
     
     override func viewDidLoad() {
