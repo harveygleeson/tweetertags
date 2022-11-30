@@ -31,7 +31,7 @@
             <objects>
                 <tableViewController id="iOl-S5-d1T" customClass="TweetsTVC" customModule="TweeterTags" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4qB-ao-VmK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter Query" textAlignment="natural" minimumFontSize="17" id="kDb-w9-vMa">
@@ -108,6 +108,13 @@
                     <navigationItem key="navigationItem" id="q67-iZ-EuI">
                         <nil key="title"/>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="EYD-jq-63s">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="iOl-S5-d1T" eventType="valueChanged" id="QHS-35-bdE"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="twitterQueryTextField" destination="kDb-w9-vMa" id="ZOA-MT-viN"/>
                     </connections>
@@ -121,7 +128,7 @@
             <objects>
                 <tableViewController id="piI-O3-eIp" customClass="MentionsTVC" customModule="TweeterTags" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="so5-PF-bZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -272,41 +279,25 @@
             <objects>
                 <viewController id="K1s-wL-VPm" customClass="ImageVC" customModule="TweeterTags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jXO-3I-kJq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="b1H-2e-Lyk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBm-5p-Wcb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pBm-5p-Wcb" secondAttribute="bottom" id="9we-U0-Wt5"/>
-                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="top" secondItem="b1H-2e-Lyk" secondAttribute="top" id="E64-Gb-C0d"/>
-                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="centerY" secondItem="b1H-2e-Lyk" secondAttribute="centerY" id="F5S-Jx-DGf"/>
-                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="centerX" secondItem="b1H-2e-Lyk" secondAttribute="centerX" id="gr5-55-DNc"/>
-                                    <constraint firstItem="pBm-5p-Wcb" firstAttribute="leading" secondItem="b1H-2e-Lyk" secondAttribute="leading" id="lEy-Dz-fYX"/>
-                                    <constraint firstAttribute="trailing" secondItem="pBm-5p-Wcb" secondAttribute="trailing" id="wEl-7H-0W4"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="6Ze-UA-ytv"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="17H-Mm-O4d"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8es-WZ-C4L">
+                                <rect key="frame" x="0.0" y="41.5" width="414" height="818"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mbG-Tp-fZx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="b1H-2e-Lyk" secondAttribute="bottom" id="TGK-7H-OU5"/>
-                            <constraint firstItem="b1H-2e-Lyk" firstAttribute="leading" secondItem="mbG-Tp-fZx" secondAttribute="leading" id="dEY-bb-4cj"/>
-                            <constraint firstItem="b1H-2e-Lyk" firstAttribute="top" secondItem="mbG-Tp-fZx" secondAttribute="top" id="vUt-ho-wVG"/>
-                            <constraint firstItem="b1H-2e-Lyk" firstAttribute="centerX" secondItem="jXO-3I-kJq" secondAttribute="centerX" id="x7Q-hb-McG"/>
+                            <constraint firstItem="8es-WZ-C4L" firstAttribute="height" secondItem="mbG-Tp-fZx" secondAttribute="height" multiplier="1.12828" id="969-Iz-aJd"/>
+                            <constraint firstItem="8es-WZ-C4L" firstAttribute="width" secondItem="mbG-Tp-fZx" secondAttribute="width" id="B6a-OJ-nAC"/>
+                            <constraint firstItem="8es-WZ-C4L" firstAttribute="centerY" secondItem="mbG-Tp-fZx" secondAttribute="centerY" id="JQt-v3-64E"/>
+                            <constraint firstItem="8es-WZ-C4L" firstAttribute="centerX" secondItem="mbG-Tp-fZx" secondAttribute="centerX" id="peB-hS-JgY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lmo-mh-Pdi"/>
                     <connections>
-                        <outlet property="scrollView" destination="b1H-2e-Lyk" id="zQd-a6-9Pq"/>
-                        <outlet property="tweetImage" destination="pBm-5p-Wcb" id="r5g-W1-8Q8"/>
+                        <outlet property="scrollView" destination="8es-WZ-C4L" id="pXO-Jg-Ers"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iP-jk-ihc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -315,8 +306,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="i8I-IH-BGF"/>
-        <segue reference="zPc-CY-TdC"/>
+        <segue reference="GyD-8y-YJ1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>

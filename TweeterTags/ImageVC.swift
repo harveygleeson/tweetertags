@@ -9,37 +9,36 @@ import UIKit
 
 class ImageVC: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var tweetImage: UIImageView!
-    var imageToDisplay:UIImage? = nil
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.delegate = self
+            scrollView.addSubview(imageView)
+        }
+    }
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? { tweetImage }
+    private var imageView = UIImageView()
+    var imageToDisplay: UIImage? = nil
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? { imageView }
     
     // Function to set display image and zoom
     func setImageAndZoom(imageToDisplay: UIImage) {
-        tweetImage.image = imageToDisplay
-        scrollView.addSubview(tweetImage)
-        scrollView.sizeToFit()
-        scrollView.contentSize = tweetImage.frame.size
-        
-        // Get image height
-        let imageHeight = imageToDisplay.size.height
-        let scrollViewHeight = scrollView.contentSize.height
-        var zoomScale:CGFloat = 1
+        imageView.image = imageToDisplay
+        imageView.sizeToFit()
 
-        if scrollViewHeight < imageHeight {
-            zoomScale = imageHeight / scrollViewHeight
-        } else {
-            zoomScale = scrollViewHeight / imageHeight
-        }
-        scrollView.minimumZoomScale = 1
+        scrollView.contentSize = imageView.frame.size
+
+        scrollView.minimumZoomScale = scrollView.bounds.width / imageView.frame.size.width
         scrollView.maximumZoomScale = 5
-        scrollView.setZoomScale(zoomScale, animated: false)
+        scrollView.zoomScale = scrollView.bounds.height / imageView.frame.size.height
+        
+        let offsetX = (scrollView.contentSize.width / 2) - (scrollView.bounds.width / 2)
+        scrollView.contentOffset.x = offsetX
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.delegate = self
         if let imageToDisplay = imageToDisplay {
             setImageAndZoom(imageToDisplay: imageToDisplay)
         }

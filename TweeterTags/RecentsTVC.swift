@@ -54,7 +54,7 @@ class RecentsTVC: UITableViewController {
             }
         // Never reached due to shouldPerformSegue conditions
         default:
-            return
+            break
         }
     }
     

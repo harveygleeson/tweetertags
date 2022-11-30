@@ -44,15 +44,19 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var twitterQueryTextField: UITextField!
     
-    private func refresh() {
+    @IBAction private func refresh() {
         if let twitterQueryText = twitterQueryText {
             let twitterRequest = TwitterRequest(search: twitterQueryText, count: 8)
-            twitterRequest.fetchTweets { (tweets) -> Void in
-                DispatchQueue.main.async { () -> Void in
-                    self.tweets.append(tweets)
+                DispatchQueue.global().async { [weak self] in
+                    twitterRequest.fetchTweets { (tweets) -> Void in
+                        DispatchQueue.main.async { () -> Void in
+                            self?.tweets.removeAll()
+                            self?.tweets.append(tweets)
+                            self?.refreshControl?.endRefreshing() ?? nil
+                    }
                 }
             }
-         }
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -66,11 +70,6 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
         twitterQueryTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-//        let defaults = UserDefaults.standard
-//        if let existingDefaults = defaults.object(forKey: "tweeterTags.searchHistory") as? [String] {
-//            let mostRecentSearch = existingDefaults.first
-//            twitterQueryText = mostRecentSearch
-//        }
     }
     
 
