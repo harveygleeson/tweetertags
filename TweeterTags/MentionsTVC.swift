@@ -29,17 +29,14 @@ enum StoryboardIdentifiers: String {
 }
 
 class MentionsTVC: UITableViewController {
-    var sections: [Section] = []
+    private var sections: [Section] = []
     var tweet: TwitterTweet? {
         didSet
         {
             self.title = tweet?.user.name
-            print("Set tweet media to \(tweet?.media.description ?? "nothing")")
-            
         }
     }
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
